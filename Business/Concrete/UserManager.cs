@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Consrate;
+using Business.Constant;
 using Core.Abstract;
 using DataAccess.EntityFrameWork;
 using Entities.Concrete;
@@ -12,23 +14,23 @@ namespace Business.Concrete
     {
         
         IUserDal _userDal;
+
+        UserValidation UserValidation = new UserValidation();
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
         }
+        
         public void Add(User user)
         {
-            
-            if (user.UserId>0)
-            {
-                _userDal.Add(user);
-            }
+            UserValidation.Addvalidation(user);
             Console.WriteLine("ürün eklenemedi");
                 
         }
 
         public void Delete(User user)
         {
+
             _userDal.Delete(user);
         }
 
