@@ -13,7 +13,8 @@ namespace ConsoleApp1
 
 
             UserManager userManager = new UserManager(new EFUserDal());
-            userManager.Add(new User() { UserId = 0 });
+            //userManager.Add(new User() { UserId = 4, IdentificationNumber = "12345678925", });
+            userManager.Update(new User() { UserId=15,FirstName="Ğ",LastName="Ğ"});
 
 
             //DailyManager dailyManager = new DailyManager(new EFDailyDal());

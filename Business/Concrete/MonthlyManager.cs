@@ -10,10 +10,13 @@ namespace Business.Concrete
     public class MonthlyManager : IMonthlyService
     {
         IMonthlyDal _monthlyDal;
+
         public MonthlyManager(IMonthlyDal monthlyDal)
         {
             _monthlyDal = monthlyDal;
         }
+
+
         public void Add(Monthly monthly)
         {
             _monthlyDal.Add(monthly);
